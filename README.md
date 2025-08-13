@@ -29,12 +29,25 @@ This project presents a **personalized recommendation system** for DSA problems,
 - **Feature Extraction:** Using **TF-IDF** to capture the importance of terms in problem descriptions.
 - **Similarity Computation:** **Cosine Similarity** to match problems with learner profiles.
 - **Recommendation:** Suggests problems with highest similarity scores.
----
+
 ### 2. Collaborative Filtering (CF)
 - Simulated user-item interaction data (due to lack of real user logs).
 - Generated random ratings for simulated users.
 - Normalized ratings using standard scaling.
 - Computed **item-to-item similarity** to find related problems.
+
+### 3. Hybrid Model
+- Combines **CBF** + **CF** for more accurate and personalized results.
+- Integrates problem features with user interaction patterns.
+
+## 📊 Hyperparameters
+- **TF-IDF Vectorizer:**
+  - `ngram_range = (1, 2)` to capture both single words and consecutive word pairs.
+- **Ridge Regression:**
+  - `alpha`: Regularization strength.
+  - `n_iter = 20`: Number of parameter samples.
+  - `cv = 5`: 5-fold cross-validation.
+  - `scoring = 'r2'`: Model performance metric.
 
 ## 📈 Evaluation Metrics
 - **Accuracy:** `(TP + TN) / (TP + TN + FP + FN)`
